@@ -5,9 +5,9 @@ export const validateRequiredFields = (newMovie) => {
     if (!title || typeof title !== 'string' || title.trim() === '') {
         errors.push('Title is required and must be a non-empty string.');
     }
-    
-    if (!year || typeof year !== 'number' || year < 0 || year > new Date().getFullYear()) {
-        errors.push('Year is required and must be a valid year.');
+
+    if (!year || typeof year !== 'number' || year < 1900 || year > new Date().getFullYear()) {
+        errors.push('Year is required and must be a valid year between 1900 and current year');
     }
 
     if (!rating || typeof rating !== 'number' || rating < 0 || rating > 10) {
