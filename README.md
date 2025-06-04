@@ -66,6 +66,8 @@ year: obligatorio, representa el año de publicación de la película. Debe esta
 rating: obligatorio, número entre 0 y 10
 
 # 📁 Estructura del proyecto
+
+```
 movies-express/
 ├── controllers/             # Controladores de la lógica de negocio
 │   └── moviesController.js
@@ -85,3 +87,4 @@ movies-express/
 ├── package.json             # Dependencias y configuración del proyecto
 ├── index.js                 # Punto de entrada de la aplicación
 └── README.md                # Documentación del proyecto
+```
