@@ -29,7 +29,7 @@ cd movies-express
 npm install
 ```
 
-3. Crea un archivo .env en la raíz del proyecto basado en el archivo .env.example (por comodidad, el .env será proporcionado al profesor):
+3. Crea un archivo .env en la raíz del proyecto basado en el archivo .env.example (por comodidad, el .env será proporcionado al profesor)
 
 4. Inicia el servidor:
 
@@ -58,6 +58,7 @@ Eliminar película
 # 📊 Validaciones (Joi)
 
 title: obligatorio, mínimo 3 caracteres
+
 description: opcional
 
 year: obligatorio, representa el año de publicación de la película. Debe estar entre el año 1900 y el año actual
