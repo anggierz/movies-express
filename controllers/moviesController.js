@@ -56,16 +56,28 @@ export const updateMovies = (req, res) => {
     return res.status(404).json({ error: "Movie not found" });
   }
 
-  const errorsOnRequiredFields = validateRequiredFields(updatedData);
-  if (errorsOnRequiredFields?.length > 0) {
-    return res.status(400).json({ errors: errorsOnRequiredFields });
-  }
+  //#region Validaciones antes de implementar Joi
 
-  const errorOnStringLength = validateStringLength(updatedData, "title", 3);
-  if (errorOnStringLength) {
-    return res.status(400).json({ error: errorOnStringLength });
-  }
+  // const errorsOnRequiredFields = validateRequiredFields(updatedData);
+  // if (errorsOnRequiredFields?.length > 0) {
+  //   return res.status(400).json({ errors: errorsOnRequiredFields });
+  // }
 
+  // const errorOnStringLength = validateStringLength(updatedData, "title", 3);
+  // if (errorOnStringLength) {
+  //   return res.status(400).json({ error: errorOnStringLength });
+  // }
+
+  //#endregion
+
+  const { error, value } = movieSchema.validate(req.body);
+
+    // If validation fails, return an error response
+    if (error) {
+        return res.status(400).json({
+            error: error.details[0].message
+        });
+    }
 
   updatedData.id = id;
   movies[movieIndex] = updatedData;
